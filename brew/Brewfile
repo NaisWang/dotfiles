@@ -1,0 +1,34 @@
+tap "homebrew/bundle"
+tap "homebrew/cask", "https://mirrors.ustc.edu.cn/homebrew-cask.git"
+tap "homebrew/core", "https://mirrors.ustc.edu.cn/homebrew-core.git"
+tap "homebrew/services", "https://gitee.com/cunkai/homebrew-services.git"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Core application library for C
+brew "glib"
+# Cross-platform make
+brew "cmake"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+# GIF image/animation creator/editor
+brew "gifsicle"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Image loading and rendering library
+brew "imlib2"
+# Library for a binary-based efficient data interchange format
+brew "msgpack"
+# Open source relational database management system
+brew "mysql", restart_service: true
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Display and control your Android device
+brew "scrcpy"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Full TeX Live distribution without GUI applications
+cask "mactex-no-gui"
