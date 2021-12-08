@@ -1,0 +1,97 @@
+" 
+"  _     _          __     ___           
+" (_) __| | ___  __ \ \   / (_)_ __ ___  
+" | |/ _` |/ _ \/ _` \ \ / /| | '_ ` _ \ 
+" | | (_| |  __/ (_| |\ V / | | | | | | |
+" |_|\__,_|\___|\__,_| \_/  |_|_| |_| |_|
+"                                        
+"                                        
+"                                        
+let mapleader=" "
+set clipboard=unnamed
+set scrolloff=5
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set number
+map J 4j
+map K 4k
+map s <nop>
+
+map <leader>a :action $SelectAll<CR>
+map <leader>f :action ReformatCode<CR>
+
+" undo and redo
+map u :action $Undo<CR> 
+map U :action $Redo<CR>
+
+" uppercase and lowercase
+noremap gu gU
+noremap gU gu
+
+" search setting
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+noremap <LEADER><CR> :nohlsearch<CR>
+
+" split seting
+map sh :set splitright<CR>:vsplit<CR>
+map sl :set nosplitright<CR>:vsplit<CR><C-W>h
+map sj :set nosplitbelow<CR>:split<CR><C-W>k
+map sk :set splitbelow<CR>:split<CR>
+map su :action Unsplit<CR>
+map sU :action UnsplitAll<CR>
+map so :action ChangeSplitOrientation<CR>
+
+map <LEADER>l <C-W>l
+map <LEADER>k <C-W>k
+map <LEADER>j <C-W>j
+map <LEADER>h <C-W>h
+
+" tab setting
+map th :tabp<CR>
+map tl :tabn<CR>
+map to :tabo<CR>
+map ta :action CloseAllEditors<CR>
+map tc :action CloseEditor<CR>
+map tr :action ReopenClosedTab<CR>
+
+" navigation setting
+nnoremap ga :action GotoAction<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap g, :action JumpToLastChange<CR>
+nnoremap g. :action JumpToNextChange<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap g] :action GotoNextError<CR>
+nnoremap g[ :action GotoPreviousError<CR>
+nnoremap go :action Back<CR>
+nnoremap gp :action Forward<CR>
+nnoremap gj :action MethodDown<CR>
+nnoremap gk :action MethodUp<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+
+nnoremap fu :action FindUsages<CR>
+
+" bookmark setting
+nnoremap m :action ToggleBookmarkWithMnemonic<CR>
+map <LEADER>m :action ShowBookmarks<CR>
+nnoremap ' `
+
+" close ToolButtons、NavigationBar
+map tm :action ViewNavigationBar<CR>:action EditorToggleShowGutterIcons<CR>:action ViewMainMenu<CR>:action ViewNavigationBar<CR>:action ViewToolButtons<CR>
+
+" Collapse and Expand
+map zac :action CollapseAllRegions<CR>
+map zao :action ExpandAllRegions<CR>
+
+" code navigation
+nnoremap \r :action Run<cr>
+nnoremap \d :action Debug<cr>
+nnoremap \s :action Stop<cr>
+
+" IdeaVimExtension
+:set keep-english-in-normal
+:set keep-english-in-normal-and-restore-in-insert
