@@ -7,6 +7,7 @@ alias la='ls -a'
 alias ll='ls -il'
 alias lla='ls -la'
 alias gh='cd ~'
+alias rm='trash -F'
 
 # 在命令行中输入code能打开vscode
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}

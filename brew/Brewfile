@@ -28,6 +28,8 @@ brew "scrcpy"
 brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
+# CLI tool that moves files or folder to the trash
+brew "trash"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Full TeX Live distribution without GUI applications
