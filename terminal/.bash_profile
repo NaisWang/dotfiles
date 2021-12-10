@@ -8,6 +8,7 @@ alias ll='ls -il'
 alias lla='ls -la'
 alias gh='cd ~'
 alias rm='trash -F'
+alias mark='open -a "/Applications/Marked 2.app/"'
 
 # 在命令行中输入code能打开vscode
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
