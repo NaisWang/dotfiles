@@ -1,0 +1,21 @@
+--- open file with vim in temrinal
+on run {input, parameters}
+
+	tell application "Terminal"
+		activate
+	end tell
+
+  tell application "System Events"
+    keystroke "`"
+    keystroke "i"
+  end tell
+
+	tell application "Terminal"
+		activate
+		set theTab to selected tab in first window
+		set filePath to POSIX path of item 1 of input
+		do script "/opt/homebrew/bin/nvim " & quoted form of filePath in theTab
+	end tell
+	return input
+
+end run
