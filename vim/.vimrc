@@ -1,15 +1,15 @@
-let mapleader=" "
-let g:python_recommended_style = 0
-filetype plugin indent on
 syntax on
+set expandtab shiftwidth=2 tabstop=2
 set ai
-set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-set mouse=a
 set number
 set hlsearch
-set laststatus=1
-set clipboard+=unnamed
+set ruler
 highlight Comment ctermfg=green
+
+let mapleader=" "
+set mouse=a
+filetype indent on
+set clipboard+=unnamed
 
 map <LEADER>l <C-W>l
 map <LEADER>k <C-W>k
@@ -27,3 +27,4 @@ vmap K <Nop>
 map U <C-r>
 
 noremap <LEADER><CR> :nohlsearch<CR>
+
