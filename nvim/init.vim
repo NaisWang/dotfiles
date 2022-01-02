@@ -28,6 +28,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-loc
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 call plug#end()
 
@@ -78,3 +79,8 @@ nnoremap <leader>p :NERDTreeFocus<CR>
 "=========== vim-fzf
 "===========
 nnoremap <leader>f :Files<CR>
+
+"===========
+"=========== markdown-preview
+"===========
+let g:mkdp_browser = '/Applications/Safari.app'

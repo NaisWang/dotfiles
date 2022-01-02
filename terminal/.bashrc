@@ -21,6 +21,7 @@ if [ "Darwin" = $(uname) ]; then
   alias gd='cd ~/Desktop'
   alias gG='cd ~/Git'
   alias rm='trash -F'
+  alias gn='cd ~/Git/Blog/notes'
 
   # 在命令行中输入code能打开vscode
   code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
