@@ -41,18 +41,19 @@ Print() {
 Print "update"
 ${PM} update
 
-# python
-Print "python"
+# python2
+Print "python2"
 ${PM} install python2
+
+# python3
+Print "python3"
 ${PM} install python3
 
-# jdk
-Print "java"
+# jdk-11
+Print "java-11"
 if [ ! "Darwin" = $(uname) ]; then
   ${PM} install openjdk-11-jdk
-if
-
-
+fi
 
 # curl
 Print "curl"
@@ -99,13 +100,12 @@ ${PM} install vim
 [ -f ~/.vimrc ] && rm ~/.vimrc
 ln -s ${nowPath}/vim/.vimrc ~/.vimrc
 
-# neovim and vim
+# neovim
 Print "neovim"
 ${PM} install neovim
 mkdir -p ~/.config/nvim/plugged
 [ -f ~/.config/nvim/init.vim ] && rm ~/.config/nvim/init.vim
 ln -s ${nowPath}/nvim/init.vim ~/.config/nvim/init.vim
-
 
 # plug.vim 
 Print "plug.vim"
