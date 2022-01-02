@@ -49,7 +49,7 @@ npm install yarn
 
 # tmux 
 ${PM} install tmux
-cp ../tmux/.tmux.conf ~/.tmux.conf
+ln -s ${nowPath}/tmux/.tmux.conf ~/.tmux.conf
 
 # ranger 
 ${PM} install ranger
@@ -71,7 +71,7 @@ fi
 # neovim 
 ${PM} install neovim
 mkdir ~/.config/nvim/
-cp ../nvim/init.vim ~/.config/nvim/init.vim
+ln -s ${nowPath}/nvim/init.vim ~/.config/nvim/init.vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cd ~/.config/nvim/plugged/
 git clone git@github.com:neoclide/coc.nvim.git
@@ -81,6 +81,8 @@ yarn build
 cd ${nowPath}
 
 # bash config
-/bin/cp -rf ../terminal/.bashrc ~/.bashrc
-/bin/cp -rf ../terminal/.bash_profile ~/.bash_profile
+mv ~/.bashrc
+mv ~/.bash_profile
+ln -s ${nowPath}/terminal/.bashrc ~/.bashrc
+ln -s ${nowPath}/terminal/.bash_profile ~/.bash_profile
 . ~/.bashrc
