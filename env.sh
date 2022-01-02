@@ -61,6 +61,7 @@ npm -g install yarn
 # tmux 
 Print "tmux"
 ${PM} install tmux
+[ -f ~/.tmux.conf ] && rm ~/.tmux.conf
 ln -s ${nowPath}/tmux/.tmux.conf ~/.tmux.conf
 
 # ranger 
@@ -84,24 +85,18 @@ else
   ${PM} install trash-cli
 fi
 
-# neovim 
-Print "neovim"
+# neovim and vim
+Print "neovim and vim"
 ${PM} install neovim
 mkdir -p ~/.config/nvim/plugged
+[ -f ~/.vimrc ] && rm ~/.vimrc
+[ -f ~/.config/nvim/init.vim ] && rm ~/.config/nvim/init.vim
 ln -s ${nowPath}/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ${nowPath}/vim/.vimrc ~/.vimrc
 
 # plug.vim 
 Print "plug.vim"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# coc.nvim
-#Print "coc.nvim"
-#cd ~/.config/nvim/plugged/
-#git clone git@github.com:neoclide/coc.nvim.git
-#cd ./coc.nvim
-#yarn install
-#yarn build
-#cd ${nowPath}
 
 # bash config
 Print "bash config"
