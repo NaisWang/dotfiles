@@ -95,13 +95,13 @@ Print "plug.vim"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # coc.nvim
-Print "coc.nvim"
-cd ~/.config/nvim/plugged/
-git clone git@github.com:neoclide/coc.nvim.git
-cd ./coc.nvim
-yarn install
-yarn build
-cd ${nowPath}
+#Print "coc.nvim"
+#cd ~/.config/nvim/plugged/
+#git clone git@github.com:neoclide/coc.nvim.git
+#cd ./coc.nvim
+#yarn install
+#yarn build
+#cd ${nowPath}
 
 # bash config
 Print "bash config"
