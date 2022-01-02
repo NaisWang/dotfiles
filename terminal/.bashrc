@@ -7,6 +7,7 @@ export MYNVIMRC="~/.config/nvim/init.vim"
 
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ra='ranger'
+alias git-='git add . && git commit -m "$(date)" && git push origin master'
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
