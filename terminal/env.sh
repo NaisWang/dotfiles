@@ -16,13 +16,13 @@ Get_Dist_Name() {
     PM='yum'
   elif grep -Eqi "Debian" /etc/issue || grep -Eq "Debian" /etc/*-release; then
     DISTRO='Debian'
-    PM='apt'
+    PM='apt -y'
   elif grep -Eqi "Ubuntu" /etc/issue || grep -Eq "Ubuntu" /etc/*-release; then
     DISTRO='Ubuntu'
-    PM='apt'
+    PM='apt -y'
   elif grep -Eqi "Raspbian" /etc/issue || grep -Eq "Raspbian" /etc/*-release; then
     DISTRO='Raspbian'
-    PM='apt'
+    PM='apt -y'
   else
     DISTRO='unknow'
   fi
@@ -32,17 +32,23 @@ Get_Dist_Name
 
 # tmux 
 ${PM} install tmux
+cp ../tmux/.tmux.conf ~/.tmux.conf
 
 # ranger 
 ${PM} install ranger
 
 # fzf 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-cd ~/.fzf/
-./install
+~/.fzf/install
 
 # neovim 
 ${PM} install neovim
+mkdir ~/.config/nvim/
+cp ../nvim/init.vim ~/.config/init.vim
 
 # yarn 
 ${PM} install yarn
+
+/bin/cp -rf ../terminal/.bashrc ~/.bashrc
+/bin/cp -rf ../terminal/.bash_profile ~/.bash_profile
+source ~/.bashrc
