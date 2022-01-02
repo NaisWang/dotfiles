@@ -8,6 +8,7 @@ export MYNVIMRC="~/.config/nvim/init.vim"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ra='ranger'
 
+
 if [ -d "~/.fzf.bash" ]; then
   [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 fi
@@ -18,15 +19,17 @@ if [ "Darwin" = $(uname) ]; then
   alias ll='ls -il'
   alias lla='ls -la'
   alias gh='cd ~'
-  alias rm='trash -F'
   alias fzf='~/.fzf/bin/fzf'
   alias gd='cd ~/Desktop'
   alias gG='cd ~/Git'
+  alias rm='trash -F'
 
   # 在命令行中输入code能打开vscode
   code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
   . "$HOME/.cargo/env"
   eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  alias rm='trash -fr'
 fi
 

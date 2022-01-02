@@ -1,3 +1,4 @@
+nowPath="$(pwd)"
 Get_Dist_Name() {
   if [ "Darwin" = $(uname) ]; then
     DISTRO='Mac'
@@ -30,6 +31,22 @@ Get_Dist_Name() {
 }
 Get_Dist_Name
 
+# python
+${PM} install python2
+${PM} install python3
+
+# git
+${PM} install git
+
+# curl
+${PM} install curl
+
+# node
+curl -sL install-node.vercel.app/lts | bash
+
+# yarn 
+npm install yarn
+
 # tmux 
 ${PM} install tmux
 cp ../tmux/.tmux.conf ~/.tmux.conf
@@ -41,14 +58,29 @@ ${PM} install ranger
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+# tree
+${PM} install tree
+
+# trash
+if [ "Darwin" = $(uname) ]; then
+  ${PM} install trash
+else
+  ${PM} install trash-cli
+fi
+
 # neovim 
 ${PM} install neovim
 mkdir ~/.config/nvim/
-cp ../nvim/init.vim ~/.config/init.vim
+cp ../nvim/init.vim ~/.config/nvim/init.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+cd ~/.config/nvim/plugged/
+git clone git@github.com:neoclide/coc.nvim.git
+cd ./coc.nvim
+yarn install
+yarn build
+cd ${nowPath}
 
-# yarn 
-${PM} install yarn
-
+# bash config
 /bin/cp -rf ../terminal/.bashrc ~/.bashrc
 /bin/cp -rf ../terminal/.bash_profile ~/.bash_profile
-source ~/.bashrc
+. ~/.bashrc
