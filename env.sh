@@ -32,10 +32,14 @@ Get_Dist_Name() {
 Get_Dist_Name
 
 Print() {
-  echo -e "\033[32m===========\033[0m"
-  echo -e "\033[32m=========== $1\033[0m"
-  echo -e "\033[32m===========\033[0m"
+  echo -e "\033[32m==============================\033[0m"
+  echo -e "\033[32m============================== $1\033[0m"
+  echo -e "\033[32m==============================\033[0m"
 }
+
+# update 
+Print "update"
+${PM} update
 
 # python
 Print "python"
@@ -85,7 +89,13 @@ Print "neovim"
 ${PM} install neovim
 mkdir -p ~/.config/nvim/plugged
 ln -s ${nowPath}/nvim/init.vim ~/.config/nvim/init.vim
+
+# plug.vim 
+Print "plug.vim"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# coc.nvim
+Print "coc.nvim"
 cd ~/.config/nvim/plugged/
 git clone git@github.com:neoclide/coc.nvim.git
 cd ./coc.nvim
