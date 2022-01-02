@@ -76,6 +76,9 @@ ln -s ${nowPath}/tmux/.tmux.conf ~/.tmux.conf
 # ranger 
 Print "ranger"
 ${PM} install ranger
+mkdir -p ~/.config
+[ -d ~/.config/ranger ] && rm -rf ~/.config/ranger
+ln -s ${nowPath}/ranger ~/.config/ranger
 
 # fzf 
 Print "fzf"
