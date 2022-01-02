@@ -46,6 +46,14 @@ Print "python"
 ${PM} install python2
 ${PM} install python3
 
+# jdk
+Print "java"
+if [ ! "Darwin" = $(uname) ]; then
+  ${PM} install openjdk-11-jdk
+if
+
+
+
 # curl
 Print "curl"
 ${PM} install curl
@@ -85,14 +93,19 @@ else
   ${PM} install trash-cli
 fi
 
+# vim
+Print "vim"
+${PM} install vim
+[ -f ~/.vimrc ] && rm ~/.vimrc
+ln -s ${nowPath}/vim/.vimrc ~/.vimrc
+
 # neovim and vim
-Print "neovim and vim"
+Print "neovim"
 ${PM} install neovim
 mkdir -p ~/.config/nvim/plugged
-[ -f ~/.vimrc ] && rm ~/.vimrc
 [ -f ~/.config/nvim/init.vim ] && rm ~/.config/nvim/init.vim
 ln -s ${nowPath}/nvim/init.vim ~/.config/nvim/init.vim
-ln -s ${nowPath}/vim/.vimrc ~/.vimrc
+
 
 # plug.vim 
 Print "plug.vim"
