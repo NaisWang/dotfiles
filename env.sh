@@ -31,34 +31,49 @@ Get_Dist_Name() {
 }
 Get_Dist_Name
 
+Print() {
+  echo -e "\033[32m===========\033[0m"
+  echo -e "\033[32m=========== $1\033[0m"
+  echo -e "\033[32m===========\033[0m"
+}
+
 # python
+Print "python"
 ${PM} install python2
 ${PM} install python3
 
 # curl
+Print "curl"
 ${PM} install curl
 
 # node
+Print "node"
 curl -sL install-node.vercel.app/lts | bash
 
 # yarn 
+Print "yarn"
 npm -g install yarn
 
 # tmux 
+Print "tmux"
 ${PM} install tmux
 ln -s ${nowPath}/tmux/.tmux.conf ~/.tmux.conf
 
 # ranger 
+Print "ranger"
 ${PM} install ranger
 
 # fzf 
+Print "fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # tree
+Print "tree"
 ${PM} install tree
 
 # trash
+Print "trash"
 if [ "Darwin" = $(uname) ]; then
   ${PM} install trash
 else
@@ -66,8 +81,9 @@ else
 fi
 
 # neovim 
+Print "neovim"
 ${PM} install neovim
-mkdir ~/.config/nvim/
+mkdir -p ~/.config/nvim/plugged
 ln -s ${nowPath}/nvim/init.vim ~/.config/nvim/init.vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cd ~/.config/nvim/plugged/
@@ -78,8 +94,9 @@ yarn build
 cd ${nowPath}
 
 # bash config
-rm ~/.bashrc
-rm ~/.bash_profile
+Print "bash config"
+[ -f ~/.bashrc ] && rm ~/.bashrc
+[ -f ~/.bash_profile ] && rm ~/.bash_profile
 ln -s ${nowPath}/terminal/.bashrc ~/.bashrc
 ln -s ${nowPath}/terminal/.bash_profile ~/.bash_profile
 . ~/.bashrc

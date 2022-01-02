@@ -9,9 +9,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias ra='ranger'
 
 
-if [ -d "~/.fzf.bash" ]; then
-  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-fi
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [ "Darwin" = $(uname) ]; then
   alias pi='echo "![]("$(picgo u | tail -1)")" | pbcopy && echo $(pbpaste)'
