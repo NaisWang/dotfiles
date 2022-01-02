@@ -70,18 +70,21 @@ nmap <silent> g] <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 
-" stop CoC by default (but Coc is enabled)
+" stop CoC by default
 let g:coc_start_at_startup=0
 
 "===========
 "=========== neredtree
 "===========
 nnoremap <leader>p :NERDTreeFocus<CR>
+let NERDTreeShowHidden=1
+let NERDTreeMapOpenInTab='<ENTER>'
 
 "===========
 "=========== vim-fzf
 "===========
 nnoremap gf :Files<CR>
+let g:fzf_action = {'enter': 'tab split'}
 
 "===========
 "=========== markdown-preview

@@ -41,11 +41,14 @@ call plug#end()
 "=========== neredtree
 "===========
 nnoremap <leader>p :NERDTreeFocus<CR>
+let NERDTreeShowHidden=1
+let NERDTreeMapOpenInTab='<ENTER>'
 
 "===========
 "=========== vim-fzf
 "===========
-nnoremap <leader>f :Files<CR>
+nnoremap gf :Files<CR>
+let g:fzf_action = {'enter': 'tab split'}
 
 "===========
 "=========== markdown-preview
