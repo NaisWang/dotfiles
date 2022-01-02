@@ -35,9 +35,6 @@ Get_Dist_Name
 ${PM} install python2
 ${PM} install python3
 
-# git
-${PM} install git
-
 # curl
 ${PM} install curl
 
@@ -45,7 +42,7 @@ ${PM} install curl
 curl -sL install-node.vercel.app/lts | bash
 
 # yarn 
-npm install yarn
+npm -g install yarn
 
 # tmux 
 ${PM} install tmux
@@ -81,8 +78,8 @@ yarn build
 cd ${nowPath}
 
 # bash config
-mv ~/.bashrc
-mv ~/.bash_profile
+rm ~/.bashrc
+rm ~/.bash_profile
 ln -s ${nowPath}/terminal/.bashrc ~/.bashrc
 ln -s ${nowPath}/terminal/.bash_profile ~/.bash_profile
 . ~/.bashrc
