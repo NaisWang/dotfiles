@@ -4,7 +4,6 @@ set ai
 set number
 set hlsearch
 highlight Comment ctermfg=green
-
 set mouse=a
 filetype indent on
 set clipboard+=unnamed
@@ -12,23 +11,29 @@ map U <C-R>
 
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
-map <LEADER>l <C-W>l
-map <LEADER>k <C-W>k
-map <LEADER>j <C-W>j
-map <LEADER>h <C-W>h
+nnoremap <LEADER>l <C-W>l
+nnoremap <LEADER>k <C-W>k
+nnoremap <LEADER>j <C-W>j
+nnoremap <LEADER>h <C-W>h 
 
-map tt :tabnew<CR>
-map tl :tabn<CR>
-map th :tabp<CR>
+nnoremap tt :tabnew<CR>
+nnoremap tl :tabn<CR>
+nnoremap th :tabp<CR>
+
+nnoremap go <C-o>
+nnoremap gp <C-i>
+nnoremap gk [m
+nnoremap gj ]m
 
 call plug#begin()
 
 Plug 'preservim/nerdtree' 
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lock'}
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'dhruvasagar/vim-table-mode'
 
 call plug#end()
 
@@ -36,22 +41,17 @@ call plug#end()
 "=========== coc
 "===========
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh']
-
 set updatetime=0
-
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 set signcolumn=yes
 hi Pmenu ctermbg=8
 
-" gh - get hint on whatever's under the cursor
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Make <CR> or <tab> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm()
+      \: "\<TAB>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 
 function! s:show_documentation()
   if &filetype == 'vim'
@@ -61,17 +61,20 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Use `g[` and `g]` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> g[ <Plug>(coc-diagnostic-prev)
-nmap <silent> g] <Plug>(coc-diagnostic-next)
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-
-" stop CoC by default
-let g:coc_start_at_startup=0
+map <C-r> <Plug>(coc-rename)
+map <C-o> :OR<CR>
+map <LEADER>f :Format<CR>
+inoremap <silent><expr> <C-]> coc#refresh()
+inoremap <silent> <C-p> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> g[ <Plug>(coc-diagnostic-prev)
+nnoremap <silent> g] <Plug>(coc-diagnostic-next)
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
 
 "===========
 "=========== neredtree
@@ -84,7 +87,8 @@ let NERDTreeMapOpenInTab='<ENTER>'
 "=========== vim-fzf
 "===========
 nnoremap gf :Files<CR>
-let g:fzf_action = {'enter': 'tab split'}
+nnoremap gF :Ag<CR>
+let g:fzf_action = {'enter': 'tab drop'}
 
 "===========
 "=========== markdown-preview

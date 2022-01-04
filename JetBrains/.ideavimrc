@@ -1,3 +1,7 @@
+"====
+"==== :actionlist
+"====
+
 set expandtab shiftwidth=2 tabstop=2
 set number
 set hlsearch
@@ -15,9 +19,12 @@ map <LEADER>k <C-W>k
 map <LEADER>j <C-W>j
 map <LEADER>h <C-W>h
 
+map tl :action NextTab<CR>
+map th :action PreviousTab<CR>
+
 " split seting
-map sl :set nosplitright<CR>:vsplit<CR><C-W>h<CR>:q<CR>
-map sj :set nosplitbelow<CR>:split<CR><C-W>k<CR>:q<CR>
+nnoremap sl :action MoveTabRight<CR>
+nnoremap sj :action MoveTabDown<CR>
 map su :action Unsplit<CR>
 map sU :action UnsplitAll<CR>
 map so :action ChangeSplitOrientation<CR>
@@ -25,6 +32,7 @@ map so :action ChangeSplitOrientation<CR>
 " navigation setting
 nnoremap ga :action GotoAction<CR>
 nnoremap gf :action GotoFile<CR>
+nnoremap gF :action FindInPath<CR>
 nnoremap g, :action JumpToLastChange<CR>
 nnoremap g. :action JumpToNextChange<CR>
 nnoremap gi :action GotoImplementation<CR>
@@ -36,6 +44,7 @@ nnoremap gp :action Forward<CR>
 nnoremap gj :action MethodDown<CR>
 nnoremap gk :action MethodUp<CR>
 nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gr :action FindUsages<CR>
 
 " Collapse and Expand
 map zac :action CollapseAllRegions<CR>

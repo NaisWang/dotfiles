@@ -15,17 +15,22 @@ set mouse=a
 filetype indent on
 set clipboard+=unnamed
 map U <C-R>
- 
+
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
-map <LEADER>l <C-W>l
-map <LEADER>k <C-W>k
-map <LEADER>j <C-W>j
-map <LEADER>h <C-W>h
+nnoremap <LEADER>l <C-W>l
+nnoremap <LEADER>k <C-W>k
+nnoremap <LEADER>j <C-W>j
+nnoremap <LEADER>h <C-W>h 
 
-map tt :tabnew<CR>
-map tl :tabn<CR>
-map th :tabp<CR>
+nnoremap tt :tabnew<CR>
+nnoremap tl :tabn<CR>
+nnoremap th :tabp<CR>
+
+nnoremap go <C-o>
+nnoremap gp <C-i>
+nnoremap gk [m
+nnoremap gj ]m
 
 call plug#begin()
 
@@ -34,6 +39,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'dhruvasagar/vim-table-mode'
 
 call plug#end()
 
