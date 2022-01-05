@@ -40,7 +40,7 @@ call plug#end()
 "===========
 "=========== coc
 "===========
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint']
 set updatetime=0
 set signcolumn=yes
 hi Pmenu ctermbg=8
@@ -69,12 +69,12 @@ map <C-o> :OR<CR>
 map <LEADER>f :Format<CR>
 inoremap <silent><expr> <C-]> coc#refresh()
 inoremap <silent> <C-p> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-nnoremap <silent> g[ <Plug>(coc-diagnostic-prev)
-nnoremap <silent> g] <Plug>(coc-diagnostic-next)
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
+nmap <silent> K :call <SID>show_documentation()<CR>
+nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+nmap <silent> g] <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 "===========
 "=========== neredtree
