@@ -1,0 +1,4 @@
+{
+  "coc.preferences.jumpCommand": "tab drop",
+  "python.pythonPath": "/opt/homebrew/bin/python3"
+}

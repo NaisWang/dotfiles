@@ -7,7 +7,8 @@ highlight Comment ctermfg=green
 set mouse=a
 filetype indent on
 set clipboard+=unnamed
-map U <C-R>
+noremap U <C-R>
+let g:python_recommended_style = 0
 
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
@@ -32,6 +33,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-loc
 Plug 'jiangmiao/auto-pairs'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'dhruvasagar/vim-table-mode'
 
@@ -68,7 +70,7 @@ map <C-r> <Plug>(coc-rename)
 map <C-o> :OR<CR>
 map <LEADER>f :Format<CR>
 inoremap <silent><expr> <C-]> coc#refresh()
-inoremap <silent> <C-p> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
+inoremap <silent> <C-p> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<CR>
 nmap <silent> K :call <SID>show_documentation()<CR>
 nmap <silent> g[ <Plug>(coc-diagnostic-prev)
 nmap <silent> g] <Plug>(coc-diagnostic-next)

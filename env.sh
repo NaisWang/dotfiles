@@ -110,6 +110,9 @@ mkdir -p ~/.config/nvim/plugged
 [ -f ~/.config/nvim/init.vim ] && rm ~/.config/nvim/init.vim
 ln -s ${nowPath}/nvim/init.vim ~/.config/nvim/init.vim
 
+[ -f ~/.config/nvim/coc-settings.json ] && rm ~/.config/nvim/coc-settings.json
+ln -s ${nowPath}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+
 # plug.vim 
 Print "plug.vim"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
