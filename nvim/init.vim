@@ -17,6 +17,8 @@ nnoremap <LEADER>k <C-W>k
 nnoremap <LEADER>j <C-W>j
 nnoremap <LEADER>h <C-W>h 
 
+nnoremap gu gU
+
 nnoremap tt :tabnew<CR>
 nnoremap tl :tabn<CR>
 nnoremap th :tabp<CR>
@@ -24,7 +26,6 @@ nnoremap th :tabp<CR>
 nnoremap go <C-o>
 nnoremap gp <C-i>
 nnoremap gk [m
-nnoremap gj ]m
 
 call plug#begin()
 
