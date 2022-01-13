@@ -9,31 +9,12 @@
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_delayed_action_delay_milliseconds": 501,
                     "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "basic.to_if_held_down_threshold_milliseconds": 501,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
-                  {
-                        "description": "the left_shift is change input Method when pressing left_shift alone, otherwise the left_shift's function is not change",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_shift"
-                                },
-                                "to": {
-                                    "key_code": "left_shift"
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "f17"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
                     {
                         "description": "Change left_command+hjkl to arrow keys!",
                         "manipulators": [
@@ -115,50 +96,6 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "e",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "h",
-                                        "modifiers": [
-                                            "right_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
                                     "key_code": "i",
                                     "modifiers": {
                                         "mandatory": [
@@ -173,7 +110,7 @@
                                     {
                                         "key_code": "a",
                                         "modifiers": [
-                                            "left_control"
+                                            "control"
                                         ]
                                     }
                                 ],
@@ -195,8 +132,27 @@
                                     {
                                         "key_code": "e",
                                         "modifiers": [
-                                            "left_control"
+                                            "control"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward"
                                     }
                                 ],
                                 "type": "basic"
@@ -254,6 +210,44 @@
                                 "to": [
                                     {
                                         "shell_command": "open '/Applications/WebStorm.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Applications/wpsoffice.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Applications/Google Chrome.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -336,18 +330,21 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "f4"
-                                },
-                                "to": { 
-                                    "key_code": "up",
+                                    "key_code": "p",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "left_option"
                                         ],
                                         "optional": [
                                             "any"
                                         ]
-                                    },
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a '/System/Applications/Preview.app/'"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -392,15 +389,7 @@
                     },
                     "to": [
                         {
-
-                                    "key_code": "up",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                            "key_code": "f4"
                         }
                     ]
                 },
@@ -410,7 +399,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "dictation"
+                            "key_code": "f5"
                         }
                     ]
                 },
@@ -503,6 +492,16 @@
                 },
                 {
                     "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ]
+                },
+                {
+                    "from": {
                         "key_code": "delete_or_backspace"
                     },
                     "to": [
@@ -517,7 +516,27 @@
                     },
                     "to": [
                         {
-                            "key_code": "grave_accent_and_tilde"
+                            "key_code": "caps_lock"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_command"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "right_command"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_control"
                         }
                     ]
                 },
@@ -548,16 +567,6 @@
                     "to": [
                         {
                             "key_code": "semicolon"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "escape"
                         }
                     ]
                 }
@@ -617,15 +626,10 @@
                     },
                     "to": [
                         {
-
-                                    "key_code": "up",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                            "key_code": "up",
+                            "modifiers": [
+                                "left_control"
+                            ]
                         }
                     ]
                 },
