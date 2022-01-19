@@ -9,6 +9,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias ra='ranger'
 
 alias git-='git add . && git commit -m "$(date)" && git push origin master'
+alias fn='find ./ -name'
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

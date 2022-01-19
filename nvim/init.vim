@@ -9,6 +9,7 @@ filetype indent on
 set clipboard+=unnamed
 noremap U <C-R>
 let g:python_recommended_style = 0
+set laststatus=1
 
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
