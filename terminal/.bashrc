@@ -18,13 +18,17 @@ if [ "Darwin" = $(uname) ]; then
   alias pi='echo "![]("$(picgo u | tail -1)")" | pbcopy && echo $(pbpaste)'
   alias la='ls -a'
   alias ll='ls -il'
+  alias l='ls -il'
   alias lla='ls -la'
   alias gh='cd ~'
   alias fzf='~/.fzf/bin/fzf'
   alias gd='cd ~/Desktop'
-  alias gG='cd ~/Git'
+  alias gg='cd ~/Git'
   alias rm='trash -F'
   alias gn='cd ~/Git/Blog/notes'
+  alias gt='cd ~/Temp'
+  alias O='open ./'
+  alias ,='qlmanage -p'
 
   # 在命令行中输入code能打开vscode
   code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
