@@ -50,6 +50,9 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -66,6 +69,9 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -82,6 +88,9 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -98,6 +107,9 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -114,6 +126,9 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
@@ -122,6 +137,9 @@
                                         "key_code": "a",
                                         "modifiers": [
                                             "control"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 ],
