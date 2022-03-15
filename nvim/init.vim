@@ -72,7 +72,6 @@ map <C-r> <Plug>(coc-rename)
 map <C-o> :OR<CR>
 map <LEADER>f :Format<CR>
 inoremap <silent><expr> <C-]> coc#refresh()
-inoremap <silent> <C-p> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<CR>
 nmap <silent> K :call <SID>show_documentation()<CR>
 nmap <silent> g[ <Plug>(coc-diagnostic-prev)
 nmap <silent> g] <Plug>(coc-diagnostic-next)
