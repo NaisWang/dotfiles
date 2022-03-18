@@ -11,6 +11,9 @@ noremap U <C-R>
 let g:python_recommended_style = 0
 set laststatus=1
 
+set undofile
+set undodir=~/.config/nvim/undodir
+
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
 nnoremap <LEADER>l <C-W>l
