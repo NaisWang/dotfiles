@@ -4,7 +4,7 @@ set ai
 set number
 set hlsearch
 highlight Comment ctermfg=green
-hi Pmenu                cterm=none ctermbg=8        ctermfg=15      gui=none        guibg=#8F8F8F   guifg=#F7F7F7
+hi Pmenu cterm=none ctermbg=0 ctermfg=15 gui=none  guibg=#808080 guifg=#F7F7F7
 
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
