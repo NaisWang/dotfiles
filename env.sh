@@ -103,6 +103,9 @@ ${PM} install vim
 [ -f ~/.vimrc ] && rm ~/.vimrc
 ln -s ${nowPath}/vim/.vimrc ~/.vimrc
 
+[ -f ~/.vim/coc-settings.json ] && rm ~/.vim/coc-settings.json
+ln -s ${nowPath}/vim/coc-settings.json ~/.vim/coc-settings.json
+
 # plug.vim 
 Print "plug.vim"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

@@ -4,15 +4,16 @@ set ai
 set number
 set hlsearch
 highlight Comment ctermfg=green
+hi Pmenu                cterm=none ctermbg=8        ctermfg=15      gui=none        guibg=#8F8F8F   guifg=#F7F7F7
 
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 set ttimeout
 set ttimeoutlen=0
 set ttyfast
-
 set undofile
 set undodir=~/.vim/undodir
+
 
 set mouse=a
 filetype indent on
@@ -52,10 +53,9 @@ call plug#end()
 "===========
 "=========== coc
 "===========
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets']
 set updatetime=0
 set signcolumn=yes
-"hi Pmenu ctermbg=8
 
 " Make <CR> or <tab> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
