@@ -1,5 +1,0 @@
-{
-  "coc.preferences.jumpCommand": "tab drop",
-  "python.pythonPath": "/opt/homebrew/bin/python3",
-  "python.formatting.autopep8Args": ["--indent-size=2"]
-}
