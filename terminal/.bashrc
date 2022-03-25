@@ -7,6 +7,7 @@ export MYNVIMRC="~/.vimrc"
 
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ra='ranger'
+alias python='python3'
 
 alias git-='git add . && git commit -m "$(date)" && git push origin master'
 alias fn='find ./ -name'

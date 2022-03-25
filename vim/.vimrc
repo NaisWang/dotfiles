@@ -1,6 +1,7 @@
 syntax on
 set expandtab shiftwidth=2 tabstop=2
 set ai
+set mouse=a
 set number
 set hlsearch
 highlight Comment ctermfg=green
@@ -53,7 +54,7 @@ call plug#end()
 "===========
 "=========== coc
 "===========
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets', '@yaegassy/coc-volar']
 set updatetime=0
 set signcolumn=yes
 

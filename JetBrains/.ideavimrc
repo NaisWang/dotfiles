@@ -39,8 +39,6 @@ nnoremap gi :action GotoImplementation<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap g] :action GotoNextError<CR>
 nnoremap g[ :action GotoPreviousError<CR>
-nnoremap go :action Back<CR>
-nnoremap gp :action Forward<CR>
 nnoremap gj :action MethodDown<CR>
 nnoremap gk :action MethodUp<CR>
 nnoremap gs :action GotoSuperMethod<CR>
