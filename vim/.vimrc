@@ -34,11 +34,6 @@ nnoremap tt :tabnew<CR>
 nnoremap tl :tabn<CR>
 nnoremap th :tabp<CR>
 
-nnoremap go <C-o>
-nnoremap gp <C-i>
-nnoremap gk [m
-nnoremap gj ]m
-
 call plug#begin()
 
 Plug 'preservim/nerdtree' 
@@ -77,8 +72,6 @@ endfunction
 command! -nargs=0 Format :call CocAction('format')
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-map <C-r> <Plug>(coc-rename)
-map <C-o> :OR<CR>
 map <LEADER>f :Format<CR>
 inoremap <silent><expr> <C-]> coc#refresh()
 nmap <silent> K :call <SID>show_documentation()<CR>

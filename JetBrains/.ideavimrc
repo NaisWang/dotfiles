@@ -11,6 +11,9 @@ noremap u :action $Undo<CR>
 noremap U :action $Redo<CR>
 map s <nop>
 
+noremap <C-j> 4j
+noremap <C-k> 4k
+
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
 map <LEADER>f :action ReformatCode<CR>
@@ -33,16 +36,16 @@ map so :action ChangeSplitOrientation<CR>
 nnoremap ga :action GotoAction<CR>
 nnoremap gf :action GotoFile<CR>
 nnoremap gF :action FindInPath<CR>
-nnoremap g, :action JumpToLastChange<CR>
-nnoremap g. :action JumpToNextChange<CR>
+nnoremap gd :action GotoDeclarationOnly<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap gd :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
 nnoremap g] :action GotoNextError<CR>
 nnoremap g[ :action GotoPreviousError<CR>
 nnoremap gj :action MethodDown<CR>
 nnoremap gk :action MethodUp<CR>
-nnoremap gs :action GotoSuperMethod<CR>
-nnoremap gr :action FindUsages<CR>
+
+nnoremap gl :action ShowUsages<CR>
+nnoremap gL :action FindUsages<CR>
 
 " Collapse and Expand
 map zac :action CollapseAllRegions<CR>
