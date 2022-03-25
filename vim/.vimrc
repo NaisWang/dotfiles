@@ -34,6 +34,11 @@ nnoremap tt :tabnew<CR>
 nnoremap tl :tabn<CR>
 nnoremap th :tabp<CR>
 
+noremap <C-j> 4j
+noremap <C-k> 4k
+nnoremap gk [m
+nnoremap gj ]m
+
 call plug#begin()
 
 Plug 'preservim/nerdtree' 
