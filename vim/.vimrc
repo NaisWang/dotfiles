@@ -54,9 +54,9 @@ call plug#end()
 "===========
 "=========== coc
 "===========
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets', '@yaegassy/coc-volar']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets', '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake']
 set updatetime=0
-set signcolumn=yes
+"set signcolumn=yes
 
 " Make <CR> or <tab> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin

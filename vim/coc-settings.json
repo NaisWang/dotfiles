@@ -1,6 +1,9 @@
 {
   "coc.preferences.jumpCommand": "tab drop",
   "python.pythonPath": "/opt/homebrew/bin/python3",
-  "python.formatting.autopep8Args": ["--indent-size=2"],
+  "diagnostic.enableSign": false,
+  "python.formatting.autopep8Args": [
+    "--indent-size=2"
+  ],
   "snippets.ultisnips.enable": false
 }

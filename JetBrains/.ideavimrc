@@ -32,20 +32,22 @@ map su :action Unsplit<CR>
 map sU :action UnsplitAll<CR>
 map so :action ChangeSplitOrientation<CR>
 
+nnoremap g, :action JumpToLastChange<CR>
+
 " navigation setting
 nnoremap ga :action GotoAction<CR>
 nnoremap gf :action GotoFile<CR>
 nnoremap gF :action FindInPath<CR>
 nnoremap gd :action GotoDeclarationOnly<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap gs :action GotoSuperMethod<CR>
 nnoremap g] :action GotoNextError<CR>
 nnoremap g[ :action GotoPreviousError<CR>
 nnoremap gj :action MethodDown<CR>
 nnoremap gk :action MethodUp<CR>
+nnoremap gs :action GotoSuperMethod<CR>
 
-nnoremap gl :action ShowUsages<CR>
 nnoremap gL :action FindUsages<CR>
+nnoremap gl :action ShowUsages<CR>
 
 " Collapse and Expand
 map zac :action CollapseAllRegions<CR>
