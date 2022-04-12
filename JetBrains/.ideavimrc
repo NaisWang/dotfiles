@@ -11,8 +11,8 @@ noremap u :action $Undo<CR>
 noremap U :action $Redo<CR>
 map s <nop>
 
-noremap <C-j> 4j
-noremap <C-k> 4k
+noremap J 4j
+noremap K 4k
 
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
@@ -45,8 +45,10 @@ nnoremap gs :action GotoSuperMethod<CR>
 nnoremap g, :action JumpToLastChange<CR>
 
 nnoremap gd :action GotoDeclarationOnly<CR>
-nnoremap gL :action FindUsages<CR>
-nnoremap gl :action ShowUsages<CR>
+nnoremap gR :action FindUsages<CR>
+nnoremap gr :action ShowUsages<CR>
+
+map <C-d> :action ShowErrorDescription<CR>
 
 " Collapse and Expand
 map zac :action CollapseAllRegions<CR>

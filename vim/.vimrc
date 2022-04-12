@@ -4,8 +4,10 @@ set ai
 set mouse=a
 set number
 set hlsearch
+
 highlight Comment ctermfg=green
-hi Pmenu cterm=none ctermbg=0 ctermfg=15 gui=none  guibg=#808080 guifg=#F7F7F7
+highlight SignColumn ctermbg=15 ctermfg=15 gui=none  guibg=#808080 guifg=#F7F7F7
+highlight Pmenu ctermfg=NONE ctermbg=0 cterm=NONE guifg=NONE guibg=#64666d gui=bold
 
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
@@ -14,7 +16,6 @@ set ttimeoutlen=0
 set ttyfast
 set undofile
 set undodir=~/.vim/undodir
-
 
 set mouse=a
 filetype indent on
@@ -34,8 +35,8 @@ nnoremap tt :tabnew<CR>
 nnoremap tl :tabn<CR>
 nnoremap th :tabp<CR>
 
-noremap <C-j> 4j
-noremap <C-k> 4k
+noremap J 4j
+noremap K 4k
 nnoremap gk [m
 nnoremap gj ]m
 
@@ -57,7 +58,7 @@ call plug#end()
 "===========
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets', '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake']
 set updatetime=0
-"set signcolumn=yes
+set signcolumn=yes
 
 " Make <CR> or <tab> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -74,18 +75,22 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 command! -nargs=0 Format :call CocAction('format')
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 map <LEADER>f :Format<CR>
 inoremap <silent><expr> <C-]> coc#refresh()
-nmap <silent> K :call <SID>show_documentation()<CR>
 nmap <silent> g[ <Plug>(coc-diagnostic-prev)
 nmap <silent> g] <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+nmap <silent> <C-k> :call <SID>show_documentation()<CR>
+inoremap <C-p> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
+nmap <C-f> <Plug>(coc-codeaction)
+nmap <C-r> <Plug>(coc-rename)
+nnoremap <silent> <C-O> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 
 "===========
 "=========== neredtree
