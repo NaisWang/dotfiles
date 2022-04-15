@@ -3,6 +3,7 @@ set expandtab shiftwidth=2 tabstop=2
 set ai
 set mouse=a
 set number
+set wildmenu
 
 set hlsearch
 set incsearch "边输入边搜索(实时搜索)"

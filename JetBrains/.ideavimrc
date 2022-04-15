@@ -48,7 +48,7 @@ nnoremap gd :action GotoDeclarationOnly<CR>
 nnoremap gR :action FindUsages<CR>
 nnoremap gr :action ShowUsages<CR>
 
-map <C-d> :action ShowErrorDescription<CR>
+map <C-e> :action ShowErrorDescription<CR>
 
 " Collapse and Expand
 map zac :action CollapseAllRegions<CR>
