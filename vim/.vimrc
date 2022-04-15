@@ -3,7 +3,9 @@ set expandtab shiftwidth=2 tabstop=2
 set ai
 set mouse=a
 set number
+
 set hlsearch
+set incsearch "边输入边搜索(实时搜索)"
 
 highlight Comment ctermfg=green
 highlight SignColumn ctermbg=15 ctermfg=15 gui=none  guibg=#808080 guifg=#F7F7F7
@@ -39,6 +41,10 @@ noremap J 4j
 noremap K 4k
 nnoremap gk [m
 nnoremap gj ]m
+
+if &filetype == 'markdown'
+  autocmd VimEnter * Vista
+endif
 
 call plug#begin()
 
@@ -109,3 +115,10 @@ let g:fzf_action = {'enter': 'tab split'}
 "=========== markdown-preview
 "===========
 let g:mkdp_browser = '/Applications/Safari.app'
+
+"===========
+"=========== Vista
+"===========
+if &filetype == 'markdown'
+  autocmd VimEnter * Vista
+endif

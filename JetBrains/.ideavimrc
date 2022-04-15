@@ -1,10 +1,10 @@
 "====
 "==== :actionlist
 "====
-
 set expandtab shiftwidth=2 tabstop=2
 set number
 set hlsearch
+set incsearch
 
 set clipboard=unnamed
 noremap u :action $Undo<CR>
