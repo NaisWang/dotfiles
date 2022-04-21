@@ -32,8 +32,6 @@ nnoremap <LEADER>k <C-W>k
 nnoremap <LEADER>j <C-W>j
 nnoremap <LEADER>h <C-W>h 
 
-nnoremap gu gU
-
 nnoremap tt :tabnew<CR>
 nnoremap tl :tabn<CR>
 nnoremap th :tabp<CR>
@@ -42,6 +40,7 @@ noremap J 4j
 noremap K 4k
 nnoremap gk [m
 nnoremap gj ]m
+nnoremap g, '.
 
 if &filetype == 'markdown'
   autocmd VimEnter * Vista
@@ -97,7 +96,7 @@ nmap <silent> <C-k> :call <SID>show_documentation()<CR>
 inoremap <C-p> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
 nmap <C-f> <Plug>(coc-codeaction)
 nmap <C-r> <Plug>(coc-rename)
-nnoremap <silent> <C-O> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+nnoremap <silent> <C-M> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 
 "===========
 "=========== neredtree

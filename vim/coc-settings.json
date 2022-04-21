@@ -4,5 +4,8 @@
   "python.formatting.autopep8Args": [
     "--indent-size=2"
   ],
-  "snippets.ultisnips.enable": false
+  "snippets.ultisnips.enable": false,
+  "markdownlint.config": {
+    "line_length": false
+  }
 }
