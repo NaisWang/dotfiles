@@ -23,7 +23,7 @@ set undodir=~/.vim/undodir
 set mouse=a
 filetype indent on
 set clipboard+=unnamed
-map U <C-R>
+map U :redo<CR>
 
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
