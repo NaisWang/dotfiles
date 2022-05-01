@@ -62,7 +62,7 @@ call plug#end()
 "===========
 "=========== coc
 "===========
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets', '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets', '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake', 'coc-xml']
 set updatetime=0
 set signcolumn=yes
 
@@ -93,7 +93,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 nmap <silent> <C-k> :call <SID>show_documentation()<CR>
-inoremap <C-p> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
+inoremap <C-a> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
 nmap <C-f> <Plug>(coc-codeaction)
 nmap <C-r> <Plug>(coc-rename)
 nnoremap <silent> <C-M> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
@@ -101,7 +101,7 @@ nnoremap <silent> <C-M> :call CocAction('runCommand', 'editor.action.organizeImp
 "===========
 "=========== neredtree
 "===========
-nnoremap <leader>p :NERDTreeFocus<CR>
+nnoremap <C-p> :NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
 let NERDTreeMapOpenInTab='<ENTER>'
 

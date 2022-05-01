@@ -29,9 +29,8 @@
                 },
                 "to": [
                   {
-                    "key_code": "left_shift",
+                    "key_code": "left_option",
                     "modifiers": [
-                      "left_option",
                       "left_command",
                       "left_control"
                     ]
@@ -45,7 +44,6 @@
             "description": "Change command-u to PageUp, command-d to PageDown",
             "manipulators": [
               {
-                "type": "basic",
                 "from": {
                   "key_code": "u",
                   "modifiers": {
@@ -58,10 +56,10 @@
                   {
                     "key_code": "page_up"
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "d",
                   "modifiers": {
@@ -74,7 +72,8 @@
                   {
                     "key_code": "page_down"
                   }
-                ]
+                ],
+                "type": "basic"
               }
             ]
           },
@@ -88,6 +87,9 @@
                   "modifiers": {
                     "mandatory": [
                       "command"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -107,6 +109,9 @@
                   "modifiers": {
                     "mandatory": [
                       "command"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -125,12 +130,14 @@
             "description": "Cursor moving: Change command-e to Alt-RightArrow, comamnd-b to Alt-LeftArrow",
             "manipulators": [
               {
-                "type": "basic",
                 "from": {
                   "key_code": "e",
                   "modifiers": {
                     "mandatory": [
                       "command"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -141,15 +148,18 @@
                       "option"
                     ]
                   }
-                ]
+                ],
+                "type": "basic"
               },
               {
-                "type": "basic",
                 "from": {
                   "key_code": "b",
                   "modifiers": {
                     "mandatory": [
                       "command"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -160,12 +170,13 @@
                       "option"
                     ]
                   }
-                ]
+                ],
+                "type": "basic"
               }
             ]
           },
           {
-            "description": "vim",
+            "description": "vim direction",
             "manipulators": [
               {
                 "from": {
@@ -245,54 +256,10 @@
               },
               {
                 "from": {
-                  "key_code": "i",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command"
-                    ],
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "a",
-                    "modifiers": [
-                      "control"
-                    ],
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "o",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "e",
-                    "modifiers": [
-                      "control"
-                    ]
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
                   "key_code": "delete_or_backspace",
                   "modifiers": {
                     "mandatory": [
-                      "shift"
+                      "left_command"
                     ]
                   }
                 },
@@ -394,22 +361,6 @@
               },
               {
                 "from": {
-                  "key_code": "g",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_option"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open '/Applications/Google Chrome.app'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
                   "key_code": "s",
                   "modifiers": {
                     "mandatory": [
@@ -419,23 +370,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open '/Applications/Safari.app'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "c",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_option"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open '/Applications/Visual Studio Code.app'"
+                    "shell_command": "open '/Applications/Google Chrome.app'"
                   }
                 ],
                 "type": "basic"
@@ -452,38 +387,6 @@
                 "to": [
                   {
                     "shell_command": "open -a '/System/Library/CoreServices/Finder.app/'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "r",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_option"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a '/System/Applications/Reminders.app/'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "p",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_option"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a '/System/Applications/Preview.app/'"
                   }
                 ],
                 "type": "basic"
