@@ -53,9 +53,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'majutsushi/tagbar'
 
-Plug 'godlygeek/tabular'
-Plug 'preservim/vim-markdown'
-
 call plug#end()
 
 :autocmd BufRead *.md :Tagbar
@@ -127,11 +124,3 @@ let g:tagbar_type_markdown = {
         \ ],
     \ 'sort' : 0
 \ }
-
-"===========
-"=========== vim-markdown
-"===========
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_math = 1
-let g:vim_markdown_list_item_indent = 2
-let g:vim_markdown_conceal=0
