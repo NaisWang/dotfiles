@@ -50,7 +50,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-Plug 'dhruvasagar/vim-table-mode'
+Plug 'dhruvasagar/vim-table-mode' " 在|--|行输入:Tableize命令即可格式化当前表格
 Plug 'majutsushi/tagbar'
 
 call plug#end()
@@ -124,3 +124,4 @@ let g:tagbar_type_markdown = {
         \ ],
     \ 'sort' : 0
 \ }
+
