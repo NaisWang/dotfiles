@@ -6,7 +6,7 @@ set number
 set wildmenu
 
 set hlsearch
-set incsearch "边输入边搜索(实时搜索)"
+set incsearch "边输入边搜索(实时搜索)
 
 highlight Comment ctermfg=green
 highlight SignColumn ctermbg=15 ctermfg=15 gui=none  guibg=#808080 guifg=#F7F7F7
@@ -42,10 +42,6 @@ nnoremap gk [m
 nnoremap gj ]m
 nnoremap g, '.
 
-if &filetype == 'markdown'
-  autocmd VimEnter * Vista
-endif
-
 call plug#begin()
 
 Plug 'preservim/nerdtree' 
@@ -55,14 +51,19 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'liuchengxu/vista.vim'
+Plug 'majutsushi/tagbar'
+
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 
 call plug#end()
+
+:autocmd BufRead *.md :Tagbar
 
 "===========
 "=========== coc
 "===========
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-markdownlint', 'coc-snippets', '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake', 'coc-xml']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-snippets', '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake', 'coc-xml']
 set updatetime=0
 set signcolumn=yes
 
@@ -114,11 +115,23 @@ let g:fzf_action = {'enter': 'tab split'}
 "===========
 "=========== markdown-preview
 "===========
-let g:mkdp_browser = '/Applications/Safari.app'
+"let g:mkdp_browser = '/Applications/Safari.app'
 
 "===========
-"=========== Vista
+"=========== tagbar
 "===========
-if &filetype == 'markdown'
-  autocmd VimEnter * Vista
-endif
+let g:tagbar_type_markdown = {
+        \ 'ctagstype' : 'markdown',
+        \ 'kinds' : [
+                \ 'h:headings',
+        \ ],
+    \ 'sort' : 0
+\ }
+
+"===========
+"=========== vim-markdown
+"===========
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_list_item_indent = 2
+let g:vim_markdown_conceal=0
