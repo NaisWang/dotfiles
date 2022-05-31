@@ -4,6 +4,7 @@ set ai
 set mouse=a
 set number
 set wildmenu
+set nocompatible 
 
 set hlsearch
 set incsearch "边输入边搜索(实时搜索)
@@ -20,7 +21,6 @@ set ttyfast
 set undofile
 set undodir=~/.vim/undodir
 
-set mouse=a
 filetype indent on
 set clipboard+=unnamed
 map U :redo<CR>
@@ -52,6 +52,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'dhruvasagar/vim-table-mode' " 在|--|行输入:Tableize命令即可格式化当前表格
 Plug 'majutsushi/tagbar'
+Plug 'universal-ctags/ctags'
 
 call plug#end()
 
@@ -118,10 +119,31 @@ let g:fzf_action = {'enter': 'tab split'}
 "=========== tagbar
 "===========
 let g:tagbar_type_markdown = {
-        \ 'ctagstype' : 'markdown',
-        \ 'kinds' : [
-                \ 'h:headings',
-        \ ],
-    \ 'sort' : 0
+  \ 'ctagstype'	: 'markdown',
+  \ 'kinds'		: [
+    \ 'c:chapter:0:1',
+    \ 's:section:0:1',
+    \ 'S:subsection:0:1',
+    \ 't:subsubsection:0:1',
+    \ 'T:l4subsection:0:1',
+    \ 'u:l5subsection:0:1',
+  \ ],
+  \ 'sro'			: '""',
+  \ 'kind2scope'	: {
+    \ 'c' : 'chapter',
+    \ 's' : 'section',
+    \ 'S' : 'subsection',
+    \ 't' : 'subsubsection',
+    \ 'T' : 'l4subsection',
+  \ },
+  \ 'scope2kind'	: {
+    \ 'chapter' : 'c',
+    \ 'section' : 's',
+    \ 'subsection' : 'S',
+    \ 'subsubsection' : 't',
+    \ 'l4subsection' : 'T',
+  \ },
 \ }
-
+let g:tagbar_show_data_type = 2
+let g:tagbar_sort = 0
+let g:tagbar_show_balloon = 0
