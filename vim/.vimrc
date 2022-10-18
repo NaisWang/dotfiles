@@ -42,6 +42,26 @@ nnoremap gk [m
 nnoremap gj ]m
 nnoremap g, '.
 
+
+"===========
+"=========== Compile functioncoc
+"===========
+map <C-d> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+	exec "w"
+	if &filetype == 'java'
+    :belowright term ++shell javac % && time java %<
+		:res -15
+	elseif &filetype == 'python'
+    :belowright term ++shell python3 %
+		:res -15
+	elseif &filetype == 'javascript'
+    :belowright term ++shell node %
+		:res -15
+	endif
+endfunc
+
+
 call plug#begin()
 
 Plug 'preservim/nerdtree' 
@@ -56,7 +76,7 @@ Plug 'universal-ctags/ctags'
 
 call plug#end()
 
-:autocmd BufRead *.md :Tagbar
+:autocmd BufRead *.md :Tagbar<CR>
 
 "===========
 "=========== coc
@@ -118,32 +138,9 @@ let g:fzf_action = {'enter': 'tab split'}
 "===========
 "=========== tagbar
 "===========
-let g:tagbar_type_markdown = {
-  \ 'ctagstype'	: 'markdown',
-  \ 'kinds'		: [
-    \ 'c:chapter:0:1',
-    \ 's:section:0:1',
-    \ 'S:subsection:0:1',
-    \ 't:subsubsection:0:1',
-    \ 'T:l4subsection:0:1',
-    \ 'u:l5subsection:0:1',
-  \ ],
-  \ 'sro'			: '""',
-  \ 'kind2scope'	: {
-    \ 'c' : 'chapter',
-    \ 's' : 'section',
-    \ 'S' : 'subsection',
-    \ 't' : 'subsubsection',
-    \ 'T' : 'l4subsection',
-  \ },
-  \ 'scope2kind'	: {
-    \ 'chapter' : 'c',
-    \ 'section' : 's',
-    \ 'subsection' : 'S',
-    \ 'subsubsection' : 't',
-    \ 'l4subsection' : 'T',
-  \ },
-\ }
-let g:tagbar_show_data_type = 2
+let g:tagbar_show_data_type = 1
 let g:tagbar_sort = 0
 let g:tagbar_show_balloon = 0
+let g:tagbar_compact = 1
+let g:tagbar_autoshowtag = 1
+let g:tagbar_silent = 1
