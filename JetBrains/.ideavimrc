@@ -5,10 +5,14 @@ set expandtab shiftwidth=2 tabstop=2
 set number
 set hlsearch
 set incsearch
+set scrolloff=5
+
+" 设置重命名变量不改变输入模式
+set idearefactormode=keep
 
 set clipboard=unnamed
-noremap u :action $Undo<CR>
-noremap U :action $Redo<CR>
+map u :action $Undo<CR>
+map U :action $Redo<CR>
 map s <nop>
 
 noremap J 4j
@@ -28,19 +32,10 @@ map th :action PreviousTab<CR>
 " split seting
 nnoremap sl :action MoveTabRight<CR>
 nnoremap sj :action MoveTabDown<CR>
-map su :action Unsplit<CR>
-map sU :action UnsplitAll<CR>
-map so :action ChangeSplitOrientation<CR>
 
 " navigation setting
-nnoremap ga :action GotoAction<CR>
 nnoremap gf :action GotoFile<CR>
-nnoremap gF :action FindInPath<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap g] :action GotoNextError<CR>
-nnoremap g[ :action GotoPreviousError<CR>
-nnoremap gj :action MethodDown<CR>
-nnoremap gk :action MethodUp<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap g, :action JumpToLastChange<CR>
 
@@ -49,7 +44,3 @@ nnoremap gR :action FindUsages<CR>
 nnoremap gr :action ShowUsages<CR>
 
 map <C-e> :action ShowErrorDescription<CR>
-
-" Collapse and Expand
-map zac :action CollapseAllRegions<CR>
-map zao :action ExpandAllRegions<CR>

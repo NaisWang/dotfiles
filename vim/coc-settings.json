@@ -4,6 +4,8 @@
   "python.formatting.autopep8Args": [
     "--indent-size=2"
   ],
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.functionReturnTypes": false,
   "snippets.ultisnips.enable": false,
   "markdownlint.config": {
     "line_length": false

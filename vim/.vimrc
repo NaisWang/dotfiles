@@ -1,5 +1,5 @@
 syntax on
-set expandtab shiftwidth=2 tabstop=2
+set expandtab shiftwidth=4 tabstop=4
 set ai
 set mouse=a
 set number
@@ -36,31 +36,9 @@ nnoremap tt :tabnew<CR>
 nnoremap tl :tabn<CR>
 nnoremap th :tabp<CR>
 
-noremap J 4j
-noremap K 4k
-nnoremap gk [m
-nnoremap gj ]m
+noremap J 5j
+noremap K 5k
 nnoremap g, '.
-
-
-"===========
-"=========== Compile functioncoc
-"===========
-map <C-d> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-	exec "w"
-	if &filetype == 'java'
-    :belowright term ++shell javac % && time java %<
-		:res -15
-	elseif &filetype == 'python'
-    :belowright term ++shell python3 %
-		:res -15
-	elseif &filetype == 'javascript'
-    :belowright term ++shell node %
-		:res -15
-	endif
-endfunc
-
 
 call plug#begin()
 
@@ -72,7 +50,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'dhruvasagar/vim-table-mode' " 在|--|行输入:Tableize命令即可格式化当前表格
 Plug 'majutsushi/tagbar'
-Plug 'universal-ctags/ctags'
 
 call plug#end()
 
@@ -81,17 +58,14 @@ call plug#end()
 "===========
 "=========== coc
 "===========
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh', 'coc-snippets', '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake', 'coc-xml']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh',  '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake', 'coc-xml']
 set updatetime=0
 set signcolumn=yes
 
 " Make <CR> or <tab> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm()
-      \: "\<TAB>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! s:show_documentation()
   if &filetype == 'vim'
@@ -104,17 +78,15 @@ autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 command! -nargs=0 Format :call CocAction('format')
 
 map <LEADER>f :Format<CR>
-inoremap <silent><expr> <C-]> coc#refresh()
-nmap <silent> g[ <Plug>(coc-diagnostic-prev)
-nmap <silent> g] <Plug>(coc-diagnostic-next)
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 nmap <silent> <C-k> :call <SID>show_documentation()<CR>
-inoremap <C-a> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
+inoremap <C-q> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
 nmap <C-f> <Plug>(coc-codeaction)
-nmap <C-r> <Plug>(coc-rename)
+nmap <C-s> <Plug>(coc-rename)
 nnoremap <silent> <C-M> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 
 "===========
@@ -134,6 +106,7 @@ let g:fzf_action = {'enter': 'tab split'}
 "=========== markdown-preview
 "===========
 "let g:mkdp_browser = '/Applications/Safari.app'
+"let g:mkdp_theme = 'dark'
 
 "===========
 "=========== tagbar
