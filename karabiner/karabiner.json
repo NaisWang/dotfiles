@@ -407,7 +407,7 @@
                             },
                             {
                               "from": {
-                                "key_code": "p",
+                                "key_code": "y",
                                 "modifiers": {
                                   "mandatory": [
                                     "left_option"
@@ -417,6 +417,22 @@
                               "to": [
                                 {
                                   "shell_command": "open '/Applications/Pycharm.app'"
+                                }
+                              ],
+                              "type": "basic"
+                            },
+                            {
+                              "from": {
+                                "key_code": "p",
+                                "modifiers": {
+                                  "mandatory": [
+                                    "left_option"
+                                  ]
+                                }
+                              },
+                              "to": [
+                                {
+                                  "shell_command": "open '/Users/wanghengzhi/Applications/ChatGPT.app'"
                                 }
                               ],
                               "type": "basic"
