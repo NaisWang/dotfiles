@@ -1,4 +1,5 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export HOMEBREW_NO_AUTO_UPDATE=true
 export PS1='\u@:\[\e[01;32m\]\w\[\e[0m\]\$ '
 export EDITOR='vim'
 export CLICOLOR=1
@@ -8,9 +9,10 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias ra='ranger'
+#alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+#alias ra='ranger'
 alias python='python3'
+alias pip='pip3'
 alias grep='grep --color'
 alias code='code -n'
 alias note="~/iCloud/blog/bin/client.sh"
@@ -30,7 +32,7 @@ if [ "Darwin" = $(uname) ]; then
   alias gh='cd ~'
   alias gi='cd ~/iCloud'
   alias fzf='~/.fzf/bin/fzf'
-  alias gt='cd ~/iCloud/Documents/other'
+  alias gt='cd ~/notSync'
   alias gd='cd ~/iCloud/Documents'
   alias gx='cd ~/Downloads'
   alias gg='cd ~/Git'
