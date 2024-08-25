@@ -14,8 +14,9 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 alias python='python3'
 alias pip='pip3'
 alias grep='grep --color'
-alias code='code -n'
-alias note="~/iCloud/blog/bin/client.sh"
+alias note="/Users/wanghengzhi/Library/Mobile\ Documents/com~apple~CloudDocs/blog/bin/client.sh"
+alias vs="/Applications/Aqua.app/Contents/MacOS/aqua >/dev/null 2>&1 "
+
 
 alias git-='git add . && git commit -m "$(date)" && git push origin master'
 alias gitlog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
@@ -25,6 +26,7 @@ alias gitlog="git log --graph --abbrev-commit --decorate --date=relative --forma
 if [ "Darwin" = $(uname) ]; then
   alias pi='echo "![]("$(picgo u | tail -1)")" | pbcopy && echo $(pbpaste)'
   alias tp='open -a /Applications/Typora.app'
+  alias finder='open -R'
   alias la='ls -a'
   alias ll='ls -il'
   alias l='ls -il'
@@ -37,7 +39,7 @@ if [ "Darwin" = $(uname) ]; then
   alias gx='cd ~/Downloads'
   alias gg='cd ~/Git'
   alias rm='trash -F'
-  alias gn="cd ~/iCloud/blog/notes"
+  alias gn="cd /Users/wanghengzhi/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/notes"
   alias O='open ./'
   alias ,='qlmanage -p'
 
@@ -47,12 +49,16 @@ else
   alias rm='trash -fr'
 fi
 
-vs() {
-  folder=$(fzf --height 40% --layout=reverse)
+#vs() {
+#  folder=$(fzf --height 40% --layout=reverse)
+#
+#  if [ -n "$folder" ];
+#  then
+#    code $folder
+#  fi
+#}
 
-  if [ -n "$folder" ];
-  then
-    code $folder
-  fi
-}
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

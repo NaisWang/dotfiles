@@ -43,51 +43,51 @@ nnoremap g, '.
 call plug#begin()
 
 Plug 'preservim/nerdtree' 
-Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-Plug 'dhruvasagar/vim-table-mode' " 在|--|行输入:Tableize命令即可格式化当前表格
-Plug 'majutsushi/tagbar'
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+"Plug 'dhruvasagar/vim-table-mode' " 在|--|行输入:Tableize命令即可格式化当前表格
+"Plug 'majutsushi/tagbar'
 
 call plug#end()
 
-:autocmd BufRead *.md :Tagbar<CR>
+":autocmd BufRead *.md :Tagbar<CR>
 
 "===========
 "=========== coc
 "===========
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh',  '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake', 'coc-xml']
-set updatetime=0
-set signcolumn=yes
-
-" Make <CR> or <tab> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-command! -nargs=0 Format :call CocAction('format')
-
-map <LEADER>f :Format<CR>
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-nmap <silent> <C-k> :call <SID>show_documentation()<CR>
-inoremap <C-q> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
-nmap <C-f> <Plug>(coc-codeaction)
-nmap <C-s> <Plug>(coc-rename)
-nnoremap <silent> <C-M> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+"let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-html', 'coc-java', 'coc-pyright', 'coc-css', 'coc-html-css-support', 'coc-tsserver', 'coc-eslint', 'coc-sh',  '@yaegassy/coc-volar', 'coc-clangd', 'coc-cmake', 'coc-xml']
+"set updatetime=0
+"set signcolumn=yes
+"
+"" Make <CR> or <tab> auto-select the first completion item and notify coc.nvim to
+"" format on enter, <cr> could be remapped by other vim plugin
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"
+"function! s:show_documentation()
+"  if &filetype == 'vim'
+"    execute 'h '.expand('<cword>')
+"  else
+"    call CocAction('doHover')
+"  endif
+"endfunction
+"autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+"command! -nargs=0 Format :call CocAction('format')
+"
+"map <LEADER>f :Format<CR>
+"
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"
+"nmap <silent> <C-k> :call <SID>show_documentation()<CR>
+"inoremap <C-q> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
+"nmap <C-f> <Plug>(coc-codeaction)
+"nmap <C-s> <Plug>(coc-rename)
+"nnoremap <silent> <C-M> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 
 "===========
 "=========== neredtree
@@ -111,9 +111,9 @@ let g:fzf_action = {'enter': 'tab split'}
 "===========
 "=========== tagbar
 "===========
-let g:tagbar_show_data_type = 1
-let g:tagbar_sort = 0
-let g:tagbar_show_balloon = 0
-let g:tagbar_compact = 1
-let g:tagbar_autoshowtag = 1
-let g:tagbar_silent = 1
+"let g:tagbar_show_data_type = 1
+"let g:tagbar_sort = 0
+"let g:tagbar_show_balloon = 0
+"let g:tagbar_compact = 1
+"let g:tagbar_autoshowtag = 1
+"let g:tagbar_silent = 1

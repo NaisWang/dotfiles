@@ -25,6 +25,8 @@ map <LEADER>l <C-W>l
 map <LEADER>k <C-W>k
 map <LEADER>j <C-W>j
 map <LEADER>h <C-W>h
+map ]m :action MethodDown<CR>
+map [m :action MethodUp<CR>
 
 map tl :action NextTab<CR>
 map th :action PreviousTab<CR>
