@@ -16,10 +16,23 @@ alias pip='pip3'
 alias grep='grep --color'
 alias note="/Users/wanghengzhi/Library/Mobile\ Documents/com~apple~CloudDocs/blog/bin/client.sh"
 alias vs="/Applications/Aqua.app/Contents/MacOS/aqua >/dev/null 2>&1 "
+alias fp="~/Applications/fp/fp.sh"
 
 
 alias git-='git add . && git commit -m "$(date)" && git push origin master'
 alias gitlog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+alias sshl="cat ~/.ssh/config | grep -E '^Host|^[ ]*(User|HostName)' | sed 's/Host /---------------\n&/g' | awk '{gsub(/Host /, \"\033[1;31m&\033[0m\"); print}'"
+
+ssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+        tmux rename-window "$*"
+        command ssh "$@"
+        tmux set-window-option automatic-rename "on" 1>/dev/null
+    else
+        command ssh "$@"
+    fi
+}
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
