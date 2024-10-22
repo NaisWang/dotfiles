@@ -40,6 +40,9 @@ noremap J 5j
 noremap K 5k
 nnoremap g, '.
 
+" select pasted block
+nnoremap gp `[v`]
+
 call plug#begin()
 
 Plug 'preservim/nerdtree' 

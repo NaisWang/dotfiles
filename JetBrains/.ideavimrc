@@ -18,6 +18,9 @@ map s <nop>
 noremap J 4j
 noremap K 4k
 
+" select pasted block
+nnoremap gp `[v`]
+
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
 map <LEADER>f :action ReformatCode<CR>
@@ -46,3 +49,4 @@ nnoremap gR :action FindUsages<CR>
 nnoremap gr :action ShowUsages<CR>
 
 map <C-e> :action ShowErrorDescription<CR>
+
