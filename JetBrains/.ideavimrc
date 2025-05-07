@@ -11,28 +11,29 @@ set scrolloff=5
 set idearefactormode=keep
 
 set clipboard=unnamed
-map u :action $Undo<CR>
-map U :action $Redo<CR>
-map s <nop>
+nnoremap u :action $Undo<CR>
+nnoremap U :action $Redo<CR>
+nnoremap s <nop>
 
-noremap J 4j
-noremap K 4k
+noremap <C-j> 4j
+noremap <C-k> 4k
 
 " select pasted block
 nnoremap gp `[v`]
 
 let mapleader=" "
 noremap <LEADER><CR> :nohlsearch<CR>
-map <LEADER>f :action ReformatCode<CR>
-map <LEADER>l <C-W>l
-map <LEADER>k <C-W>k
-map <LEADER>j <C-W>j
-map <LEADER>h <C-W>h
-map ]m :action MethodDown<CR>
-map [m :action MethodUp<CR>
+nnoremap <LEADER>f :action ReformatCode<CR>
+nnoremap <LEADER>l <C-W>l
+nnoremap <LEADER>k <C-W>k
+nnoremap <LEADER>j <C-W>j
+nnoremap <LEADER>h <C-W>h
+nnoremap ]m :action MethodDown<CR>
+nnoremap [m :action MethodUp<CR>
+nnoremap gmr :action MethodUp<CR>:action ShowUsages<CR>
 
-map tl :action NextTab<CR>
-map th :action PreviousTab<CR>
+nnoremap tl :action NextTab<CR>
+nnoremap th :action PreviousTab<CR>
 
 " split seting
 nnoremap sl :action MoveTabRight<CR>
@@ -40,7 +41,7 @@ nnoremap sj :action MoveTabDown<CR>
 
 " navigation setting
 nnoremap gf :action GotoFile<CR>
-nnoremap gi :action GotoImplementation<CR>
+nnoremap ga :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap g, :action JumpToLastChange<CR>
 
@@ -48,5 +49,5 @@ nnoremap gd :action GotoDeclarationOnly<CR>
 nnoremap gR :action FindUsages<CR>
 nnoremap gr :action ShowUsages<CR>
 
-map <C-e> :action ShowErrorDescription<CR>
+nnoremap <C-e> :action ShowErrorDescription<CR>
 

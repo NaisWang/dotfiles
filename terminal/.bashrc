@@ -52,7 +52,7 @@ if [ "Darwin" = $(uname) ]; then
   alias gx='cd ~/Downloads'
   alias gg='cd ~/Git'
   alias rm='trash -F'
-  alias gn="cd /Users/wanghengzhi/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/notes"
+  alias gn="cd ~/Git/notes"
   alias O='open ./'
   alias ,='qlmanage -p'
 
