@@ -50,4 +50,3 @@ nnoremap gR :action FindUsages<CR>
 nnoremap gr :action ShowUsages<CR>
 
 nnoremap <C-e> :action ShowErrorDescription<CR>
-
