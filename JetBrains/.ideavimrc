@@ -6,6 +6,7 @@ set number
 set hlsearch
 set incsearch
 set scrolloff=5
+set nooldundo
 
 " 设置重命名变量不改变输入模式
 set idearefactormode=keep
@@ -19,6 +20,7 @@ noremap <C-j> 4j
 noremap <C-k> 4k
 
 " select pasted block
+" noremap p p`[
 nnoremap gp `[v`]
 
 let mapleader=" "

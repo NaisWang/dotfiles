@@ -1,10 +1,13 @@
 syntax on
 set expandtab shiftwidth=4 tabstop=4
 set ai
-set mouse=a
 set number
 set wildmenu
 set nocompatible 
+
+" change window size by mouse
+set mouse+=a
+set ttymouse=xterm2
 
 set hlsearch
 set incsearch "边输入边搜索(实时搜索)
@@ -95,7 +98,7 @@ call plug#end()
 "===========
 "=========== neredtree
 "===========
-nnoremap <C-p> :NERDTreeFocus<CR>
+nnoremap <C-p> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let NERDTreeMapOpenInTab='<ENTER>'
 
