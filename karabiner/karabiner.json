@@ -120,7 +120,7 @@
                                 ],
                                 "conditions": [
                                        {
-                                         "type": "frontmost_application_if",
+                                         "type": "frontmost_application",
                                          "bundle_identifiers": [
                                            "^com\\.apple\\.Terminal$"
                                          ]
@@ -369,6 +369,14 @@
                                     "modifiers": { "mandatory": ["left_option"] }
                                 },
                                 "to": [{ "shell_command": "open '/Applications/Knock.app'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": { "mandatory": ["left_option"] }
+                                },
+                                "to": [{ "shell_command": "open '/Applications/Xmind.app'" }],
                                 "type": "basic"
                             }
                         ]
